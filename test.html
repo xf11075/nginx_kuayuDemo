@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+	<h1></h1>
+</body>
+<script>
+	$.ajax({
+		type: "post",
+		url: 'http://localhost/apis/mock1.php',
+		async: true,
+		dataType: "json",
+		contentType: "application/json; charset=utf-8",
+		success:function(res){
+			if(res.status==1){
+				$("h1").html('请求成功:'+res.msg);
+			}
+		}
+	})
+</script>
+</html>
